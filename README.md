@@ -1,39 +1,43 @@
-# graphql-date [![Build Status](https://travis-ci.org/tjmehta/graphql-date.svg)](https://travis-ci.org/tjmehta/graphql-date) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
-GraphQL Date Type
+# graphql-date-timezoneless [![Build Status](https://travis-ci.org/occitech/graphql-date-timezoneless.svg)](https://travis-ci.org/occitech/graphql-date-timezoneless)
+
+GraphQL Date Timezoneless Type
 
 # Installation
+
 ```bash
-npm i --save graphql-date
+npm i --save occitech/graphql-date-timezoneless
 ```
 
 # Usage
+
 ```js
-var GraphQLDate = require('graphql-date')
+var GraphQLDateTimezoneless = require("graphql-date-timezoneless");
 
 // Use graphql-date in your GraphQL objects for Date properties
 var fooType = new GraphQLObjectType({
-  name: 'Foo',
-  description: 'Some foo type',
+  name: "Foo",
+  description: "Some foo type",
   fields: {
     created: {
-      type: GraphQLDate,
-      description: 'Date foo was created'
+      type: GraphQLDateTimezoneless,
+      description: "Date foo was created"
     }
   }
 });
 
 var queryType = new GraphQLObjectType({
-  name: 'Query',
+  name: "Query",
   fields: {
     foo: {
       type: fooType,
-      resolve: function () {
+      resolve: function() {
         // ...
-      },
+      }
     }
   }
-})
+});
 ```
 
 # License
+
 MIT
